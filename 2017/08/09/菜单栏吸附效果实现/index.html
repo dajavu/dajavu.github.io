@@ -98,11 +98,11 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="菜单栏吸附效果实现">
 <meta property="og:url" content="http://yoursite.com/2017/08/09/菜单栏吸附效果实现/index.html">
-<meta property="og:site_name" content="dajava的博客">
+<meta property="og:site_name" content="Dajavu、Blog">
 <meta property="og:description" content="菜单栏滑动到顶，吸附在顶部">
 <meta property="og:image" content="http://ouelqx0og.bkt.clouddn.com/20170809.png">
 <meta property="og:image" content="http://ouelqx0og.bkt.clouddn.com/20170809-02.png">
-<meta property="og:updated_time" content="2017-08-22T03:10:45.000Z">
+<meta property="og:updated_time" content="2017-08-22T03:53:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="菜单栏吸附效果实现">
 <meta name="twitter:description" content="菜单栏滑动到顶，吸附在顶部">
@@ -142,12 +142,22 @@
 
 
 
-  <title>菜单栏吸附效果实现 | dajava的博客</title>
+  <title>菜单栏吸附效果实现 | Dajavu、Blog</title>
   
 
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7878679612306946431abe535996cf01";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -172,7 +182,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">dajava的博客</span>
+        <span class="site-title">Dajavu、Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -203,6 +213,46 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -244,11 +294,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="古佩">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="dajava的博客">
+      <meta itemprop="name" content="Dajavu、Blog">
     </span>
 
     
@@ -309,15 +359,14 @@
         <p><strong>菜单栏滑动到顶，吸附在顶部</strong></p>
 <a id="more"></a>
 <p>如下图：<br><img src="http://ouelqx0og.bkt.clouddn.com/20170809.png" alt=""></p>
-<!-- More -->
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="1、使用position-sticky"><a href="#1、使用position-sticky" class="headerlink" title="1、使用position:sticky;"></a>1、使用position:sticky;</h3><p>MDN文档是这样解释的：</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h3 id="使用position-sticky"><a href="#使用position-sticky" class="headerlink" title="使用position:sticky;"></a>使用position:sticky;</h3><p>MDN文档是这样解释的：</p>
 <ul>
 <li>盒位置根据正常流计算(这称为正常流动中的位置)，然后相对于该元素在流中的 flow root（BFC）和 containing block（最近的块级祖先元素）定位。在所有情况下（即便被定位元素为 table 时），该元素定位均不对后续元素造成影响。当元素 B 被粘性定位时，后续元素的位置仍按照 B 未定位时的位置来确定。position: sticky 对 table 元素的效果与 position: relative 相同。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div style=&quot;position:-webkit-sticky; position:sticky; top:0&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
 <p>一行代码就搞定了，但是好的属性浏览器支持的太少<br><img src="http://ouelqx0og.bkt.clouddn.com/20170809-02.png" alt=""></p>
 <p>如上图，可以看到Android手机上支持率太低了，如果是你做一个webApp的话，还是放弃这种方法，参考第二种。</p>
-<h3 id="2、js监听滚动"><a href="#2、js监听滚动" class="headerlink" title="2、js监听滚动"></a>2、js监听滚动</h3><p>1.js监听滚动事件<br>1.判断菜单dom是否超出视窗<br>1.如果超出给菜单栏设置绝对定位（fixed）</p>
+<h3 id="js监听滚动"><a href="#js监听滚动" class="headerlink" title="js监听滚动"></a>js监听滚动</h3><p>1.js监听滚动事件<br>1.判断菜单dom是否超出视窗<br>1.如果超出给菜单栏设置绝对定位（fixed）</p>
 <p>下面直接贴出代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">		&lt;title&gt;&lt;/title&gt;</div><div class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">		&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</div><div class="line">		&lt;link href=&quot;css/style.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;div style=&quot;overflow:scroll&quot;&gt;</div><div class="line">			&lt;div style=&quot;width: 100%;height:100px;background:red;margin-bottom:10px&quot;&gt;&lt;/div&gt;</div><div class="line">			&lt;div id=&quot;bar&quot; style=&quot;width:100%;height:20px;background:black&quot;&gt;&lt;/div&gt;</div><div class="line">			&lt;div style=&quot;width: 100%;height:1500px;background:red;margin-top:10px&quot;&gt;&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">	&lt;script&gt;</div><div class="line">		var barOffSetTop = document.getElementById(&apos;bar&apos;).offsetTop;</div><div class="line"></div><div class="line">		window.addEventListener(&apos;scroll&apos;, (e) =&gt; &#123;</div><div class="line">			if(barOffSetTop &lt; document.body.scrollTop)&#123;</div><div class="line">				bar.classList.add(&apos;add-fixed&apos;)</div><div class="line">			&#125;else&#123;</div><div class="line">				bar.classList.remove(&apos;add-fixed&apos;)</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;style&gt;</div><div class="line">	.add-fixed&#123;</div><div class="line">		position: fixed;</div><div class="line">		top: 0;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
 
@@ -421,7 +470,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/avatar.jpeg"
                alt="古佩" />
           <p class="site-author-name" itemprop="name">古佩</p>
            
@@ -432,7 +481,7 @@
 
           
             <div class="site-state-item site-state-posts">
-              <a href="/">
+              <a href="/archives/">
                 <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
@@ -481,7 +530,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">1.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、使用position-sticky"><span class="nav-number">1.1.</span> <span class="nav-text">1、使用position:sticky;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、js监听滚动"><span class="nav-number">1.2.</span> <span class="nav-text">2、js监听滚动</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">1.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用position-sticky"><span class="nav-number">2.</span> <span class="nav-text">使用position:sticky;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js监听滚动"><span class="nav-number">3.</span> <span class="nav-text">js监听滚动</span></a></li></ol></div>
             
 
           </div>
