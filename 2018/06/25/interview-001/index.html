@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Dajavu、Blog</title>
+  <title>interview-001 | Dajavu、Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Dajavu、Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="总结css问题 div垂直居中有多少解决方案？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="interview-001">
+<meta property="og:url" content="http://yoursite.com/2018/06/25/interview-001/index.html">
 <meta property="og:site_name" content="Dajavu、Blog">
+<meta property="og:description" content="总结css问题 div垂直居中有多少解决方案？">
+<meta property="og:updated_time" content="2018-07-03T10:16:12.939Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dajavu、Blog">
+<meta name="twitter:title" content="interview-001">
+<meta name="twitter:description" content="总结css问题 div垂直居中有多少解决方案？">
   
     <link rel="alternative" href="/atom.xml" title="Dajavu、Blog" type="application/atom+xml">
   
@@ -155,152 +159,171 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-interview-001" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      interview-001
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/25/interview-001/" class="archive-article-date">
+
+        
+        <a href="/2018/06/25/interview-001/" class="archive-article-date">
   	<time datetime="2018-06-25T02:06:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-25</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/25/interview-001/">interview-001</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="css问题"><a href="#css问题" class="headerlink" title="css问题"></a>css问题</h3><ul>
+<li><strong>div垂直居中有多少解决方案？</strong></li>
+</ul>
+<a id="more"></a>
+<p>1、使用display:flex<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">align-items:center</div></pre></td></tr></table></figure></p>
+<p>2、使用position:absolute 加 transform实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#father&#123;</div><div class="line">  position:relative;</div><div class="line">&#125;</div><div class="line">#son&#123;</div><div class="line">  position:absolute;</div><div class="line">  top:50%;</div><div class="line">  transform: translateY(-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>如何画出小于1px的线？</strong><br>最完美的方案，使用transform<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#line&#123;</div><div class="line">  transform: scaleY(.5);</div><div class="line">  transform-origin: 50% 100%;</div><div class="line">  border-bottom: 1px solid black;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这里使用transform-origin是必须的，不然线会糊掉，参考:<br><a href="https://fed.renren.com/2018/03/24/half-of-one-px/" target="_blank" rel="external">如何画一条0.5px的边</a></p>
+<ul>
+<li><p><strong>css position有几个属性？</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">absolute  relative  flexd  static  inherit</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>border-radius?</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/* top-left | top-right | bottom-right | bottom-left */</div><div class="line">border-radius: 1px 2px 3px 4px;</div><div class="line"></div><div class="line">/* top-left | top-right-and-bottom-left | bottom-right */</div><div class="line">border-radius: 1px 2px 3px;</div><div class="line"></div><div class="line">/* top-left-and-bottom-right | top-right-and-bottom-left */</div><div class="line">border-radius: 1px 2px;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="js问题"><a href="#js问题" class="headerlink" title="js问题"></a>js问题</h3><ul>
+<li><strong>js基本类型有哪些，引用类型有哪些？它们之间的区别</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">基本类型：string boolean number undefined null</div><div class="line">引用类型：array object function</div><div class="line"></div><div class="line">1、基本类型不会改变原有的值，比如:</div><div class="line">var name = &quot;gupei&quot;; </div><div class="line">name.toUpperCase();</div><div class="line"></div><div class="line">2、引用类型是类型的比较</div><div class="line">var person1 = &#123;&#125;;</div><div class="line">var person2 = &#123;&#125;;</div><div class="line">if(person1 == person2) //false</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="https://www.cnblogs.com/focusxxxxy/p/6390536.html" target="_blank" rel="external">js基本类型和引用类型</a></p>
+<ul>
+<li><strong>怎么判断一个变量是object还是array?</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;name : &apos;wangxiao&apos;&#125;;</div><div class="line">var arr = [&apos;wangxiao&apos;];</div><div class="line"></div><div class="line">1、使用Array的一些特有的属性；eg：length</div><div class="line">if(obj.length typeof == &apos;Number&apos;) return &apos;Array&apos;;</div><div class="line"></div><div class="line">2、使用instanceof </div><div class="line">if(obj instanceof &apos;Array&apos;) //false</div><div class="line">if(arr instanceof &apos;Array&apos;) //true</div><div class="line"></div><div class="line">if(obj instanceof &apos;Object&apos;) //true</div><div class="line">if(arr instanceof &apos;Object&apos;) //true</div><div class="line"></div><div class="line">注意，Array instanceof 无论是Object还是Array都等于true，所以最好是判断：if(obj instanceof &apos;Array&apos;) //false</div><div class="line">备注：instanceof 运算符用来测试一个对象在其原型链中是否存在一个构造函数的 prototype 属性。</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/image/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/06/25/interview-001/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/19/halo-001/" class="archive-article-date">
-  	<time datetime="2018-06-19T07:24:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-19</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/19/halo-001/">halo-001</a>
-    </h1>
+  
+    <a href="/2018/06/19/halo-001/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">halo-001</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面壁思过</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/15/excerpts-lichee/" class="archive-article-date">
-  	<time datetime="2018-06-15T03:49:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/15/excerpts-lichee/">《荔枝》 作者：肖复兴</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/12/halo-002/" class="archive-article-date">
-  	<time datetime="2018-06-12T12:52:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/12/halo-002/">halo-002</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面壁思过</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -323,8 +346,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
