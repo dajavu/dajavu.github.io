@@ -11,7 +11,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入软妹生日eg：1013') !== '1016'){
+                alert('不许看！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
 
@@ -204,52 +213,32 @@
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
+        <li class="menu-item menu-item-主页">
           <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            首页
+            主页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+        <li class="menu-item menu-item-随笔">
+          <a href="/tags/随笔" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            关于
+            随笔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-面壁思过">
+          <a href="/tags/面壁思过" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            面壁思过
           </a>
         </li>
       
@@ -467,7 +456,7 @@
 
           
             <div class="site-state-item site-state-posts">
-              <a href="/archives/">
+              <a href="/">
                 <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
@@ -532,12 +521,6 @@
   
 </div>
 
-
-  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-  <span class="post-meta-divider">|</span>
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
 
 
         
