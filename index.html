@@ -354,9 +354,14 @@
 
       
         
-          
-            <h3 id="js问题"><a href="#js问题" class="headerlink" title="js问题"></a>js问题</h3><h4 id="call-apply-bind区别"><a href="#call-apply-bind区别" class="headerlink" title="call apply bind区别"></a>call apply bind区别</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">共性：这三者都是用来改变函数的this对象的指向的</div><div class="line"></div><div class="line">var obj = &#123;</div><div class="line">  name: &apos;gupei&apos;,</div><div class="line">  show: function(params1,params2)&#123;</div><div class="line">    console.log(this.name , params1 , params2)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">var obj1 = &#123;</div><div class="line">  name: &apos;张三&apos;</div><div class="line">&#125;</div><div class="line">obj.show(&apos;wangwu&apos;,&apos;lisi&apos;); //gupei wangwu li</div><div class="line">obj.show.call(obj1,&apos;wangwu&apos;,&apos;lisi&apos;) //张三 wangwu li</div><div class="line">obj.show.apply(obj1,[&apos;wangwu&apos;,&apos;lisi&apos;]) //张三 wangwu li</div><div class="line">obj.show.bind(obj1,&apos;wangwu&apos;,&apos;lisi&apos;)() //张三 wangwu li</div><div class="line"></div><div class="line">区别：调用方式不一样，注意bind()返回的是一个方法，需要用()调用</div></pre></td></tr></table></figure>
-          
+          <h3 id="js问题"><a href="#js问题" class="headerlink" title="js问题"></a>js问题</h3><h4 id="call-apply-bind区别"><a href="#call-apply-bind区别" class="headerlink" title="call apply bind区别"></a>call apply bind区别</h4>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/06/interview-002/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
