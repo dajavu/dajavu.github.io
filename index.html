@@ -355,10 +355,25 @@
 <ol>
 <li>APPID （科大讯飞提供，在控制台-&gt;我的应用-&gt;当前应用面板里面）</li>
 <li>APPKey (科大讯飞提供，在控制台-&gt;我的应用-&gt;当前应用面板里面）</li>
-<li>X-CurTime 只取到秒eg：1536806949，有效期只有5分钟，每次接口调用要重新去取</li>
+<li>X-CurTime 当前时间戳，只取到秒eg：1536806949，有效期只有5分钟，每次接口调用要重新去取</li>
 <li>这里的信息都是存到Http Request Header里的，注意是Header</li>
 </ol>
-<h5 id="语音识别"><a href="#语音识别" class="headerlink" title="语音识别"></a><a href="https://doc.xfyun.cn/rest_api/%E8%AF%AD%E9%9F%B3%E5%90%AC%E5%86%99.html" target="_blank" rel="external">语音识别</a></h5>
+<h5 id="语音识别"><a href="#语音识别" class="headerlink" title="语音识别"></a><a href="https://doc.xfyun.cn/rest_api/%E8%AF%AD%E9%9F%B3%E5%90%AC%E5%86%99.html" target="_blank" rel="external">语音识别</a></h5><blockquote>
+<p>接口地址：POST <a href="http://api.xfyun.cn/v1/service/v1/iat" target="_blank" rel="external">http://api.xfyun.cn/v1/service/v1/iat</a><br>如下图<br><img src="http://ouelqx0og.bkt.clouddn.com/4.png" alt=""></p>
+</blockquote>
+<p>注意：</p>
+<ol>
+<li>这里key只有一个，叫X-Param。eg: X-Param:eyJlbmdpbmVfdHlwZSI6ICJzbXMxNmsiLCJhdWUiOiAicmF3In0=</li>
+<li>这里信息也是存到Http Request Header里的</li>
+</ol>
+<p><img src="http://ouelqx0og.bkt.clouddn.com/5.png" alt=""><br>注意：</p>
+<ol>
+<li>要先进行base64编码，再进行urlencode编码</li>
+<li>大小不能超过2M，时长不能超过60S</li>
+</ol>
+<p>贴上用postman调试成功的案例图<br><img src="http://ouelqx0og.bkt.clouddn.com/6.jpg" alt=""><br><img src="http://ouelqx0og.bkt.clouddn.com/7.jpg" alt=""></p>
+<p>测试实用工具<br><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="external">在线获取时间戳</a><br><a href="http://tool.chinaz.com/tools/md5.aspx" target="_blank" rel="external">在线md5加密</a><br><a href="http://tool.chinaz.com/tools/urlencode.aspx" target="_blank" rel="external">在线urlencode加密</a></p>
+
           
         
       
